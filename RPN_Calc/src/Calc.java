@@ -1,9 +1,9 @@
-package calculator;
 
 public class Calc {
 
 	public static void main(String args[]) {
-		//CalculatorGui calc = new CalculatorGui();
+		Operand op = new Operand();
+		CalculatorGui calc = new CalculatorGui(op);
 		System.out.println("Hello World");
 	}
 
