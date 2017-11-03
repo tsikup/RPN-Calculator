@@ -5,9 +5,10 @@ public class Subtracter {
 		try {
 			Double c = Calc.st.pop();
 			Calc.st.push(Calc.st.pop()-c);
-			//System.out.println(Calc.st.get(Calc.st.size()-1));
+			CalculatorGui.display.setText(CalculatorGui.display.getText() + " -");;
 		}catch(EmptyStackException e) {
 			System.err.println("EmptyStackException: " + "You are trying to pop from an empty stack ..... SUB SECTION");
+			CalculatorGui.display.setText("Empty Stack. Press C/CE");
 		}
 	}
 }

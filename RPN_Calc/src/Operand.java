@@ -7,16 +7,21 @@ public class Operand {
 	}
 	
 	public void addDigit(char digit) {
+		if(Calc.timeEx==0) {
+			CalculatorGui.display.setText("");
+			Calc.timeEx++;
+		}
 		buf.append(digit);
-		System.out.println(buf);
+		CalculatorGui.display.setText(CalculatorGui.display.getText() + digit);
 	}
 	public void deleteLastDigit() {
 		String s = new String(buf);
 		buf = new StringBuffer(s.substring(0, s.length()-1));
-		System.out.println(buf);
+		CalculatorGui.display.setText(buf.toString());
 	}
 	public void complete() {
-		/*char c = buf.charAt(0);
+		char c = buf.charAt(0);
+		
 		switch(c) {
 		case '+':
 			System.out.println("ADD");
@@ -28,14 +33,15 @@ public class Operand {
 			System.out.println("DIV");
 		case '=':
 			System.out.println("RESULT");
-		default:*/
-		Calc.st.push(Double.parseDouble(buf.toString()));
-			//System.out.println(Calc.st.get(Calc.st.size()-1));
-		//}
-		this.reset();
+		default:
+			Calc.st.push(Double.parseDouble(buf.toString()));
+			buf = new StringBuffer(14);
+			CalculatorGui.display.setText(CalculatorGui.display.getText() + " ");
+		}
 	}
 	public void reset() {
 		buf = new StringBuffer(14);
-		System.out.println("RESET");
+		CalculatorGui.display.setText("0");
+		Calc.timeEx=0;
 	}
 }
