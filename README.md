@@ -1,6 +1,6 @@
-# OOP2017_Lab3
+# RPN-Calculator
 
-RPN Calculator developed in Java
+RPN Calculator developed in Java as a lab project for Object Oriented Programming Course 2017, Electrical and Computer Engineering Dept.,  University of Patras
 
 ECE UPatras
 Student: Tsiknakis Nikos
